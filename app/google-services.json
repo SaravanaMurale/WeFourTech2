@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "334629282859",
+    "project_id": "wefournotification",
+    "storage_bucket": "wefournotification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334629282859:android:e33188535200764797b66e",
+        "android_client_info": {
+          "package_name": "com.pojo.wefourtech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334629282859-3g7h7jhun5inbo0e3bbk058dob3deeq9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pojo.wefourtech",
+            "certificate_hash": "36659da7b08c16d8385edf0a7fabfeb8bc5be05d"
+          }
+        },
+        {
+          "client_id": "334629282859-ammbu4r8foi37d6mu0dfo2ulahvjb55v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn0SDhIchClqlaCxs-W8dXmNZCEdxMIB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334629282859-ammbu4r8foi37d6mu0dfo2ulahvjb55v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
