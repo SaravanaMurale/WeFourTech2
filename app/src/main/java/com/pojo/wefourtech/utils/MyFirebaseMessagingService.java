@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
@@ -18,6 +19,16 @@ import com.pojo.wefourtech.menuoperation.NotificationActivity;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
+    Context context;
+
+    public MyFirebaseMessagingService() {
+    }
+
+    public MyFirebaseMessagingService(Context context) {
+
+        this.context=context;
+
+    }
 
     @Override
     public void onNewToken(@NonNull String s) {
@@ -49,7 +60,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
 
-        /*NotificationCompat.Builder builder=new NotificationCompat.Builder(this,"mychannel1")
+        /*NotificationCompat.Builder builder=new NotificationCompat.Builder(context,"mychannel1")
                 .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
                 .setContentTitle(title)
                 .setContentText(body)
@@ -57,8 +68,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
         NotificationManagerCompat compat=NotificationManagerCompat.from(this);
-        compat.notify(101,builder.build());*/
-
+        compat.notify(101,builder.build());
+*/
         Intent intent=new Intent(this,NotificationReceiver.class);
         intent.putExtra("MESSAGE",body);
 

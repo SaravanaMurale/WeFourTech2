@@ -11,6 +11,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.pojo.wefourtech.R;
+import com.pojo.wefourtech.utils.MyFirebaseMessagingService;
 
 public class NotificationActivity extends AppCompatActivity {
 
@@ -18,6 +19,8 @@ public class NotificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+
+        MyFirebaseMessagingService myFirebaseMessagingService=new MyFirebaseMessagingService(NotificationActivity.this);
 
 
         FirebaseMessaging.getInstance().subscribeToTopic("weather")
