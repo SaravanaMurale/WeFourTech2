@@ -8,6 +8,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
@@ -51,6 +52,18 @@ public class NotificationTestActivity extends AppCompatActivity {
                         .build();
 
                 notificationManagerCompat.notify(1,notification);
+
+
+               /* new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent openIntent=new Intent(NotificationTestActivity.this, MainActivity.class);
+                        startActivity(openIntent);
+
+                    }
+                },2000);
+*/
+
 
 
             }

@@ -33,6 +33,17 @@
         <activity android:name=".menuoperation.AddDetailsActivity" />
         <activity android:name=".menuoperation.MapActivity" />
 
+        <!--<activity
+            android:name=".menuoperation.MainActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.pojo.wefourtech.wefourtech_TARGET_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCo4Q6Ixc8NZr_tozUoMbXs_KpSGNObEuY" />
@@ -40,7 +51,8 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <receiver android:name=".utils.NotificationReceiver" />
+        <receiver android:name=".utils.NotificationReceiver" >
+        </receiver>
 
         <service
             android:name=".utils.MyFirebaseMessagingService"

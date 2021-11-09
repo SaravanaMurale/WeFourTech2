@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*Intent getIntent=getIntent();
+        String data=getIntent.getStringExtra("MESSAGE");*/
+
+
         btnGetLocation=(Button)findViewById(R.id.getLocation);
         btnAddForm=(Button)findViewById(R.id.addForm);
         viewForm=(Button)findViewById(R.id.viewDetails);

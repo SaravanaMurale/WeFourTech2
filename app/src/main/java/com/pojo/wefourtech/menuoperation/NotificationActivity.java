@@ -20,9 +20,6 @@ public class NotificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
 
-        MyFirebaseMessagingService myFirebaseMessagingService=new MyFirebaseMessagingService(NotificationActivity.this);
-
-
         FirebaseMessaging.getInstance().subscribeToTopic("weather")
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

@@ -16,6 +16,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.pojo.wefourtech.R;
 import com.pojo.wefourtech.menuoperation.NotificationActivity;
+import com.pojo.wefourtech.menuoperation.NotificationTestActivity;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -45,16 +46,20 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         getFirebaseMessage(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
 
+        Intent intent = new Intent(MyFirebaseMessagingService.this, NotificationActivity.class);//here put your activity name which you want to open
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
     }
 
     private void getFirebaseMessage(String title, String body) {
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
 
-        Intent intent=new Intent(this,NotificationReceiver.class);
+        Intent intent=new Intent(this, NotificationActivity.class);
         intent.putExtra("MESSAGE",body);
 
-        PendingIntent pendingIntent=PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent=PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
 
         Notification notification=new NotificationCompat.Builder(this,"1")
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
