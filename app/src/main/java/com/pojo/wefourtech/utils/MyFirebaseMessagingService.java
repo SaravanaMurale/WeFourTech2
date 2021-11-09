@@ -49,27 +49,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private void getFirebaseMessage(String title, String body) {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-            NotificationChannel notificationChannel1 = new NotificationChannel(
-                    "1", "My Channel", NotificationManager.IMPORTANCE_HIGH);
-            notificationChannel1.setDescription("Channel 1 Description");
-            notificationChannel1.setShowBadge(true);
-
-        }
-
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
 
-        /*NotificationCompat.Builder builder=new NotificationCompat.Builder(context,"mychannel1")
-                .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                .setContentTitle(title)
-                .setContentText(body)
-                .setAutoCancel(true);
-
-
-        NotificationManagerCompat compat=NotificationManagerCompat.from(this);
-        compat.notify(101,builder.build());
-*/
         Intent intent=new Intent(this,NotificationReceiver.class);
         intent.putExtra("MESSAGE",body);
 
